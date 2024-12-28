@@ -1,0 +1,443 @@
+/* 全局样式重置和变量定义 */
+:root {
+    --primary-color: #2D7AF6;
+    --secondary-color: #1D1D1F;
+    --background-color: #F5F7FA;
+    --border-color: #D2D2D7;
+    --success-color: #28CD41;
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    padding: 40px 20px;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin: 0 auto 60px;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #2D7AF6, #14B8F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(45, 122, 246, 0.1);
+}
+
+.subtitle {
+    font-size: 21px;
+    color: #5A6677;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+}
+
+.demo-number {
+    position: absolute;
+    top: -8px;
+    right: -120px;
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* 主要内容区域 */
+main {
+    max-width: 680px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 输入区域样式 */
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+input {
+    flex: 1;
+    height: 48px;
+    padding: 0 20px;
+    border: 2px solid #E4E9F2;
+    border-radius: 12px;
+    font-size: 17px;
+    transition: var(--transition);
+    background: #F8FAFC;
+    caret-color: var(--primary-color);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(45, 122, 246, 0.1);
+    background: white;
+}
+
+button {
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    background-image: linear-gradient(135deg, #2D7AF6, #14B8F6);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(45, 122, 246, 0.2);
+}
+
+/* 结果展示区域 */
+.result-section {
+    margin-bottom: 32px;
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.result-section.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.result-box {
+    background-color: #F8FAFC;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    border: 2px solid #E4E9F2;
+}
+
+#resultText {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+#copyBtn {
+    background-image: linear-gradient(135deg, #28CD41, #1DB954);
+}
+
+/* 使用说明区域 */
+.instruction-section {
+    background-color: #F8FAFC;
+    border-radius: 12px;
+    padding: 24px;
+    border: 2px solid #E4E9F2;
+}
+
+.instruction-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    background: linear-gradient(135deg, #2D7AF6, #14B8F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.instruction-section ol {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+.instruction-section li {
+    margin-bottom: 12px;
+    color: #1D1D1F;
+}
+
+.tips {
+    padding-top: 20px;
+    border-top: 2px solid #E4E9F2;
+}
+
+.tips p {
+    color: #6E6E73;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 16px 16px 32px;
+    }
+
+    main {
+        padding: 24px 20px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+        padding: 0 20px;
+        margin-bottom: 8px;
+    }
+
+    .input-section {
+        flex-direction: column;
+        margin-bottom: 32px;
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        border: 2px solid #E4E9F2;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    input {
+        height: 52px;
+        font-size: 16px;
+        -webkit-appearance: none;
+        appearance: none;
+        border-width: 2px;
+        background: white;
+        margin-bottom: 4px;
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    input::placeholder {
+        color: #A0AEC0;
+        font-size: 17px;
+        letter-spacing: 0;
+        font-weight: normal;
+    }
+
+    button {
+        width: 100%;
+        height: 48px;
+        font-size: 17px;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+
+    .result-box {
+        padding: 16px;
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    #resultText {
+        font-size: 20px;
+        text-align: center;
+        word-break: break-all;
+    }
+
+    .instruction-section {
+        padding: 20px;
+    }
+
+    .instruction-section h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .instruction-section li {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .tips p {
+        font-size: 14px;
+    }
+
+    #message-container {
+        width: calc(100% - 32px);
+        max-width: 300px;
+    }
+
+    .message {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .demo-section {
+        margin-bottom: 32px;
+    }
+
+    .demo-section h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .demo-image {
+        padding: 12px;
+    }
+
+    .demo-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .demo-main {
+        margin-bottom: 40px;
+    }
+
+    .demo-number {
+        position: static;
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+    }
+}
+
+/* 针对超小屏幕的优化 */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    main {
+        padding: 20px 16px;
+    }
+
+    #resultText {
+        font-size: 18px;
+    }
+
+    .input-section {
+        padding: 16px;
+    }
+
+    input {
+        height: 48px;
+        font-size: 18px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-box {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* 消息提示样式 */
+#message-container {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.message {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 
+                0 6px 16px 0 rgba(0, 0, 0, 0.08), 
+                0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    backdrop-filter: blur(8px);
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message::before {
+    content: "✓";
+    font-weight: bold;
+    color: #52c41a;
+}
+
+/* 效果示意区域 */
+.demo-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.demo-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    background: linear-gradient(135deg, #2D7AF6, #14B8F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.demo-image {
+    background: #F8FAFC;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid #E4E9F2;
+    overflow: hidden;
+}
+
+.demo-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+} 
